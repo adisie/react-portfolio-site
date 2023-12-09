@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+}
+.container .sub-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 0.35em;
+}
+
+header {
+  width: 100%;
+  height: 100%;
+}
+header .header {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .header .site-logo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+header .header .site-logo .home-link {
+  font-family: cursive;
+  font-style: italic;
+  font-size: 1.5em;
+  text-decoration: none;
+  font-weight: bold;
+}
+header .header .navigations {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header .header .navigations ul {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header .header .navigations ul li {
+  margin: 0 0.3em;
+}
+header .header .navigations ul li .link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Times New Roman", Times, serif;
+}
+header .header .navigations ul li .link .icon {
+  margin-right: 0.05em;
+  font-size: 1.3em;
+}
+header .header .swithcer {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+header .header .swithcer button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5em;
+}
+header .header .swithcer .contact-link {
+  padding: 0.15em 1.3em;
+  border-radius: 0.17em;
+  margin-left: 0.35em;
+}
+
+.main-home-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.main-home-container .home {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+.main-home-container .home::-webkit-scrollbar {
+  width: 0;
+}
