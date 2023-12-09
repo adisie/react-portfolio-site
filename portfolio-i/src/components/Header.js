@@ -1,4 +1,4 @@
-
+import {NavLink} from 'react-router-dom'
 import { useSelector,useDispatch } from 'react-redux'
 
 // actions from slices
@@ -39,27 +39,27 @@ const Header = () => {
     <header style={{background: pageTheme.hbgc,color: pageTheme.htc,transition: '1s', borderBottom: `.15em solid ${pageTheme.hbordc}`}}>
         <div className="sub-container header">
           <div className="site-logo">
-            <a className='home-link' href ='#home' style={{color: pageTheme.htc,transition: '1s'}}><span>addis</span><span>pictures</span></a>
+            <NavLink className='home-link' to ='#home' style={{color: pageTheme.htc,transition: '1s'}}><span>addis</span><span>pictures</span></NavLink>
           </div>
-          <nav className="navigations">
+          {/* <nav className="navigations">
             <ul>
               <li>
-                <a className='link' href ='#home' style={{color: pageTheme.htc,transition: '1s'}}><MdHome className='icon'/>Home</a>
+                <NavLink className='link' to ='#home' style={{color: pageTheme.htc,transition: '1s'}}><MdHome className='icon'/>Home</NavLink>
               </li>
               <li>
-                <a className='link' href ='#skills' style={{color: pageTheme.htc,transition: '1s'}}><GiSkills className='icon'/>Skiless</a>
+                <NavLink className='link' to ='#skills' style={{color: pageTheme.htc,transition: '1s'}}><GiSkills className='icon'/>Skiless</NavLink>
               </li>
               <li>
-                <a className='link' href ='#projects' style={{color: pageTheme.htc,transition: '1s',}}><AiOutlineFundProjectionScreen className='icon'/>Projects</a>
+                <NavLink className='link' to ='#projects' style={{color: pageTheme.htc,transition: '1s',}}><AiOutlineFundProjectionScreen className='icon'/>Projects</NavLink>
               </li>
               <li>
-                <a className='link' href ='#contact' style={{color: pageTheme.htc,transition: '1s',}}><MdContactPhone className='icon'/>Contact</a>
+                <NavLink className='link' to ='#contact' style={{color: pageTheme.htc,transition: '1s',}}><MdContactPhone className='icon'/>Contact</NavLink>
               </li>
             </ul>
-          </nav>
+          </nav> */}
           <div className="swithcer">
             <button onClick={themeSwitcher} style={{color: pageTheme.htc,transition: '1s'}}>{isLightMode ? <MdNightlight /> : <MdOutlineWbTwilight />}</button>
-            <a className='contact-link' style={{color: pageTheme.htc,transition: '1s',border: `.15em solid ${pageTheme.hbordc}`}}>Contact</a>
+            <NavLink className='contact-link' style={{color: pageTheme.htc,transition: '1s',border: `.15em solid ${pageTheme.hbordc}`}}>Contact</NavLink>
           </div>
         </div>
     </header>
