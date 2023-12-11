@@ -1,13 +1,10 @@
 import {Routes,Route} from 'react-router-dom'
 
-// components
-import Header from "./components/Header"
-
 // pages
-import Home from "./pages/Home"
+import Home from './pages/Home'
 
-// css
-import './assets/css/index.css'
+// components
+import Header from './components/Header'
 
 const App = () => {
   return (
