@@ -1,12 +1,14 @@
 
-
-import React from 'react'
+// pages
+import Me from "./Me"
+import Services from "./Services"
 
 const Home = () => {
   return (
-    <div className='home'>
-      <div className="sub-container content">
-        <h3>Contenet</h3>
+    <div className="home-container">
+      <div className="sub-container home-con">
+        <Me />
+        <Services />
       </div>
     </div>
   )

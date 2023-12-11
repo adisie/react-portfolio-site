@@ -1,0 +1,30 @@
+
+.services-con {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(233, 233, 233);
+    margin-top: .5em;
+
+    h3 {
+        text-transform: capitalize;
+        margin: .5em;
+        font-size: 1.5em;
+        font-style: italic;
+        color: $primary-text-color;
+        display: flex;
+        align-items: center;
+
+        .service-icon {
+            font-size: 1.75em;
+            margin-right: .13em;
+        }
+    }
+
+    .service-list {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+}

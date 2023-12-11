@@ -6,9 +6,10 @@
 
 .container {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 .container .sub-container {
   max-width: 1000px;
@@ -110,4 +111,186 @@ header .header .user-container .profile-img {
   .header .user-container .username-spane .last-name {
     display: none;
   }
+}
+.home-container {
+  width: 100%;
+  height: 100%;
+  flex-grow: 1;
+  overflow: hidden;
+  padding: 0.3em 0;
+}
+.home-container .home-con {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+.home-container .home-con::-webkit-scrollbar {
+  width: 3px;
+}
+.home-container .home-con:hover::-webkit-scrollbar-track {
+  background: rgb(176, 176, 176);
+  border-radius: 3px;
+}
+.home-container .home-con:hover::-webkit-scrollbar-thumb {
+  background: rgb(142, 142, 142);
+  border-radius: 3px;
+}
+
+.me-con {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  padding: 0.35em;
+}
+.me-con .me-text {
+  width: 50%;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgb(50, 50, 50);
+  color: rgb(221, 220, 220);
+  padding: 0.35em;
+  border-radius: 0.3em;
+  margin-right: -90px;
+  z-index: 23;
+}
+.me-con .me-text p {
+  padding: 0.3em;
+  text-align: justify;
+}
+.me-con .me-img {
+  flex-grow: 1;
+  width: 50%;
+  height: 370px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.138), rgba(0, 0, 0, 0.187)), url("D:/projects/react-profile/portfolio-i/src/assets/images/addis-1.jpg");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+.me-con .me-img::after {
+  content: "";
+  position: absolute;
+  right: -0.3em;
+  bottom: -0.3em;
+  width: 0;
+  height: 0;
+  border-right: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  box-sizing: border-box;
+  animation: border 3s infinite alternate;
+}
+@keyframes border {
+  100% {
+    width: 100%;
+    height: 100%;
+    border-color: rgba(7, 85, 55, 0.75);
+  }
+}
+
+@media screen and (max-width: 870px) {
+  .me-con {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 0.35em;
+  }
+  .me-con .me-img {
+    width: 100%;
+    height: 270px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.261), rgba(0, 0, 0, 0.319)), url("D:/projects/react-profile/portfolio-i/src/assets/images/addis-7.jpg");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+  }
+  .me-con .me-img::before {
+    content: "";
+    position: absolute;
+    left: -0.3em;
+    top: -0.3em;
+    width: 0;
+    height: 0;
+    box-sizing: border-box;
+    border-left: 2px solid transparent;
+    border-top: 2px solid transparent;
+    animation: border-before 3s infinite alternate;
+  }
+  @keyframes border-before {
+    100% {
+      width: 100%;
+      height: 100%;
+      border-color: rgba(7, 85, 55, 0.75);
+    }
+  }
+  .me-con .me-text {
+    margin-right: 0;
+    width: 85%;
+    margin-top: -120px;
+  }
+}
+@media screen and (max-width: 490px) {
+  .me-con {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 0.35em;
+  }
+  .me-con .me-img {
+    width: 100%;
+    height: 270px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.261), rgba(0, 0, 0, 0.319)), url("D:/projects/react-profile/portfolio-i/src/assets/images/addis-9.jpg");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+  }
+  .me-con .me-img::before {
+    content: "";
+    position: absolute;
+    left: -0.3em;
+    top: -0.3em;
+    width: 0;
+    height: 0;
+    box-sizing: border-box;
+    border-left: 2px solid transparent;
+    border-top: 2px solid transparent;
+    animation: border-before 3s infinite alternate;
+  }
+  @keyframes border-before {
+    100% {
+      width: 100%;
+      height: 100%;
+      border-color: rgba(7, 85, 55, 0.75);
+    }
+  }
+  .me-con .me-text {
+    margin-right: 0;
+    width: 95%;
+    margin-top: -130px;
+    background: blue;
+  }
+}
+.services-con {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgb(233, 233, 233);
+  margin-top: 0.5em;
+}
+.services-con h3 {
+  text-transform: capitalize;
+  margin: 0.5em;
+  font-size: 1.5em;
+  font-style: italic;
+  color: rgb(7, 85, 55);
+  display: flex;
+  align-items: center;
+}
+.services-con h3 .service-icon {
+  font-size: 1.75em;
+  margin-right: 0.13em;
+}
+.services-con .service-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
