@@ -4,31 +4,38 @@ import {NavLink} from 'react-router-dom'
 import myProfileImage from '../assets/images/haddis_23.jpg'
 
 const Header = () => {
+  // functions
+  const styleActiveLink = ({isActive}) => {
+    return {
+      fontWeight: isActive ? 'bold' : 'normal'
+    }
+  }
+
   return (
     <header>
       <div className="sub-container header">
         <div className="site-logo">
-          <NavLink to='/'>addisPictures</NavLink>
+          <NavLink to='/' className='home-link'>addisPictures</NavLink>
         </div>
         <nav className="navigations">
           <ul>
             <li>
-              <NavLink to='/'>Home</NavLink>
+              <NavLink to='/' className='link' style={styleActiveLink}>Home</NavLink>
             </li>
             <li>
-              <NavLink to='/'>Services</NavLink>
+              <NavLink to='/skills' className='link' style={styleActiveLink}>Skills</NavLink>
             </li>
             <li>
-              <NavLink to='/'>Projects</NavLink>
+              <NavLink to='/projects' className='link' style={styleActiveLink}>Projects</NavLink>
             </li>
             <li>
-              <NavLink to='/'>Contact</NavLink>
+              <NavLink to='/contact' className='link' style={styleActiveLink}>Contact</NavLink>
             </li>
           </ul>
         </nav>
         <div className="user-container">
-          <span>username</span>
-          <img src={myProfileImage} alt="my-profile" style={{width: '38px'}}/>
+          <span className='username-spane'><span className='first-name'>Addis</span> <span className='last-name'>Fanta</span></span>
+          <img src={myProfileImage} alt="my-profile" className='profile-img'/>
         </div>
       </div>
     </header>

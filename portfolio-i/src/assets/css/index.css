@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.container .sub-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 0.35em;
+}
+
+header {
+  width: 100%;
+  padding: 0.15em 0;
+  height: max-content;
+  box-shadow: 0 0 3px 1px rgb(7, 85, 55);
+}
+header .header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .header .site-logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+header .header .site-logo .home-link {
+  text-decoration: none;
+  font-size: 1.2em;
+  font-family: cursive;
+  font-style: italic;
+  font-weight: bold;
+  color: rgb(7, 85, 55);
+}
+header .header .navigations {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header .header .navigations ul {
+  list-style-type: none;
+}
+header .header .navigations ul li {
+  display: inline-block;
+  margin: 0 0.3em;
+  position: relative;
+}
+header .header .navigations ul li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 3px;
+  border-radius: 3px;
+  background: rgb(7, 85, 55);
+  transition: 1s;
+}
+header .header .navigations ul li:hover::after {
+  width: 100%;
+}
+header .header .navigations ul li .link {
+  text-decoration: none;
+  color: rgb(7, 85, 55);
+}
+header .header .user-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+header .header .user-container .username-spane {
+  font-family: "Times New Roman", Times, serif;
+  color: rgb(7, 85, 55);
+  font-style: italic;
+  font-size: small;
+  font-weight: bold;
+}
+header .header .user-container .profile-img {
+  width: 42px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: 0.15em;
+}
+
+@media screen and (max-width: 640px) {
+  .header {
+    flex-wrap: wrap;
+    flex-grow: 1;
+  }
+  .header .navigations {
+    order: 3;
+    flex-basis: 100%;
+    margin: 0.35em 0 0.75em 0;
+  }
+}
+@media screen and (max-width: 420px) {
+  .header .site-logo .home-link {
+    font-size: 0.95em;
+  }
+  .header .user-container .username-spane .last-name {
+    display: none;
+  }
+}

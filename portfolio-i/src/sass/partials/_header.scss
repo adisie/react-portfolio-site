@@ -1,0 +1,121 @@
+header {
+    width: 100%;
+    padding: .15em 0;
+    height: max-content;
+    box-shadow: 0 0 3px 1px $primary-text-color;
+
+    .header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .site-logo {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            .home-link {
+                text-decoration: none;
+                font-size: 1.2em;
+                font-family: cursive;
+                font-style: italic;
+                font-weight: bold;
+                color: $primary-text-color;
+            }
+        }
+
+        .navigations {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            ul {
+                list-style-type: none;
+
+                li {
+                    display: inline-block;
+                    margin: 0 .3em;
+                    position: relative;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        bottom: -3px;
+                        width: 0;
+                        height: 3px;
+                        border-radius: 3px;
+                        background: $primary-text-color;
+                        transition: 1s;
+                    }
+
+                    &:hover::after {
+                        width: 100%;
+                    }
+
+                    .link {
+                        text-decoration: none;
+                        color: $primary-text-color;
+                    }
+                }
+            }
+        }
+        .user-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            .username-spane {
+                font-family: 'Times New Roman', Times, serif;
+                color: $primary-text-color;
+                font-style: italic;
+                font-size: small;
+                font-weight: bold;
+            }
+
+            .profile-img {
+                width: 42px;
+                height: 36px;
+                border-radius: 50%;
+                cursor: pointer;
+                margin-left: .15em;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .header {
+        flex-wrap: wrap;
+        flex-grow: 1;
+
+        .navigations {
+            order: 3;
+            flex-basis: 100%;
+            margin: .35em 0 .75em 0;
+        }
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .header {
+        
+        .site-logo {
+            
+            .home-link {
+                font-size: .95em;
+            }
+        }
+
+        .user-container {
+            
+            .username-spane {
+                
+                .last-name {
+                    display: none;
+                }
+            }
+        }
+    }
+}
