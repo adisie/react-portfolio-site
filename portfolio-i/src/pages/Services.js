@@ -8,18 +8,28 @@ const Services = () => {
         <h3><FaRegHandshake className="service-icon"/>Services</h3>
         <div className="service-list">
             <div className="service">
-                <FaDesktop className="service-i" />
-                <div className="service-description">
-                    <h4>Frontend Designer</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi dolor veniam rem quo non officia laborum, aspernatur veritatis alias odit. Voluptates rerum optio veritatis itaque quam, unde ut atque illum cupiditate quidem sunt sint nostrum repellendus amet voluptatibus, temporibus beatae. Natus pariatur fugiat ab suscipit sint cum placeat facere doloribus.</p>
-                </div>
+                <h4>Backend Development</h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex voluptatem totam nulla vitae, numquam dolore quaerat praesentium! Consequuntur iste nisi quod nemo, qui perspiciatis quibusdam beatae! Minus, quam natus. Exercitationem, eaque obcaecati.
+                </p>
             </div>
             <div className="service">
-                <FaDesktop className="service-i" />
-                <div className="service-description">
-                    <h4>Frontend Designer</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi dolor veniam rem quo non officia laborum, aspernatur veritatis alias odit. Voluptates rerum optio veritatis itaque quam, unde ut atque illum cupiditate quidem sunt sint nostrum repellendus amet voluptatibus, temporibus beatae. Natus pariatur fugiat ab suscipit sint cum placeat facere doloribus.</p>
-                </div>
+                <h4>UI/UX DESIGNING</h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex voluptatem totam nulla vitae, numquam dolore quaerat praesentium! Consequuntur iste nisi quod nemo, qui perspiciatis quibusdam beatae! Minus, quam natus. Exercitationem, eaque obcaecati.
+                </p>
+            </div>
+            <div className="service">
+                <h4>DESIGN IMPLEMENTATION</h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex voluptatem totam nulla vitae, numquam dolore quaerat praesentium! Consequuntur iste nisi quod nemo, qui perspiciatis quibusdam beatae! Minus, quam natus. Exercitationem, eaque obcaecati.
+                </p>
+            </div>
+            <div className="service">
+                <h4>RESPONSIVE DESIGN</h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex voluptatem totam nulla vitae, numquam dolore quaerat praesentium! Consequuntur iste nisi quod nemo, qui perspiciatis quibusdam beatae! Minus, quam natus. Exercitationem, eaque obcaecati.
+                </p>
             </div>
         </div>
     </div>

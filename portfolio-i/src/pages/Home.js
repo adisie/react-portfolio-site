@@ -2,6 +2,7 @@
 // pages
 import Me from "./Me"
 import Services from "./Services"
+import Skills from "./Skills"
 
 const Home = () => {
   return (
@@ -9,6 +10,7 @@ const Home = () => {
       <div className="sub-container home-con">
         <Me />
         <Services />
+        <Skills />
       </div>
     </div>
   )
