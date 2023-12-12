@@ -376,6 +376,9 @@ header .header .user-container .profile-img {
 }
 .skills-con {
   width: 100%;
+  height: max-content;
+  margin-bottom: 0.45em;
+  background: whitesmoke;
 }
 .skills-con h3 {
   text-align: center;
@@ -581,9 +584,256 @@ header .header .user-container .profile-img {
   align-items: center;
   justify-content: center;
   margin: 0.35em;
+  margin-top: 0.75em;
 }
 .skills-con .skill-list .theme-con .template {
   margin: 0.35em;
   height: 200px;
-  background: red;
+  display: flex;
+  flex-direction: column;
+}
+.skills-con .skill-list .theme-con .template .template-header {
+  padding: 0.5em 0.3em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.skills-con .skill-list .theme-con .template .template-header .site-logo {
+  font-size: 1.1em;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: cursive;
+  font-style: italic;
+}
+.skills-con .skill-list .theme-con .template .template-header .controllers {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.skills-con .skill-list .theme-con .template .template-header .controllers span {
+  font-weight: bold;
+  font-size: small;
+  font-style: italic;
+  font-family: "Times New Roman", Times, serif;
+}
+.skills-con .skill-list .theme-con .template .template-header .controllers button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.3em;
+  margin-left: 0.3em;
+}
+.skills-con .skill-list .theme-con .template .template-content {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.skills-con .skill-list .theme-con .template .template-content .cont-lr {
+  width: 95%;
+  margin: 0.35em;
+  padding: 0.3em;
+  border-radius: 0.3em;
+}
+.skills-con .skill-list .theme-con .template .template-content .cont-lr h5 {
+  text-align: center;
+  margin: 0.5em;
+  font-size: 1em;
+}
+.skills-con .skill-list .theme-con .template .template-content .cont-lr p {
+  text-align: justify;
+  padding: 0.35em;
+}
+
+@media screen and (max-width: 680px) {
+  .skill-list .spinner-con {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  .skill-list .form-con {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  .skill-list .form-con .form .pop-up {
+    left: 15%;
+  }
+}
+@media screen and (max-width: 460px) {
+  .template-content {
+    gap: 7px;
+  }
+  .template-content .left {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    width: 95%;
+  }
+  .template-content .right {
+    width: 95%;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+}
+.projects-con {
+  width: 100%;
+}
+.projects-con h3 {
+  text-align: center;
+  font-size: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+  margin: 0.5em;
+  color: rgb(7, 85, 55);
+}
+.projects-con h3 .project-icon {
+  font-size: 1.75em;
+  margin-right: 0.25em;
+}
+.projects-con .project-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.projects-con .project-list .project {
+  width: 85%;
+  margin: 0 auto;
+  padding: 0.35em;
+  border-radius: 0.3em;
+}
+.projects-con .project-list .project h4 {
+  margin: 0.35em;
+  text-align: center;
+}
+.projects-con .project-list .project p {
+  text-align: center;
+  padding: 0.3em;
+}
+.projects-con .project-list .project .btn-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.projects-con .project-list .project .btn-container .project-link {
+  margin: 0.35em;
+  background: transparent;
+  text-decoration: none;
+  position: relative;
+  color: white;
+  border: 2px solid rgb(7, 85, 55);
+  padding: 0.25em 1.3em;
+  border-radius: 0.3em;
+  cursor: pointer;
+  z-index: 3;
+  transition: 1s;
+}
+.projects-con .project-list .project .btn-container .project-link span {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 100%;
+  background: rgb(7, 85, 55);
+  border-radius: 0.3em;
+  z-index: -3;
+  transition: 1s;
+}
+.projects-con .project-list .project .btn-container .project-link:hover {
+  border: none;
+}
+.projects-con .project-list .project .btn-container .project-link:hover span {
+  width: 100%;
+}
+.projects-con .project-list .project.ishare {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.445), rgba(0, 0, 0, 0.47)), url("D:/projects/react-profile/portfolio-i/src/assets/images/share-4.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.projects-con .project-list .project.ishare .project-link {
+  border-color: rgb(255, 123, 0);
+  color: rgb(255, 123, 0);
+  font-weight: bold;
+  margin: 0.85em 3em;
+}
+.projects-con .project-list .project.ishare .project-link span {
+  background: white;
+}
+.projects-con .project-list .project.ishare h4, .projects-con .project-list .project.ishare p {
+  color: white;
+  font-style: italic;
+}
+.projects-con .project-list .project.ishare p {
+  background: rgba(0, 0, 0, 0.559);
+}
+.projects-con .project-list .project.gabi-store {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.118)), url("D:/projects/react-profile/portfolio-i/src/assets/images/gabi-2.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.projects-con .project-list .project.gabi-store button {
+  background: rgb(7, 85, 55);
+  border: none;
+  color: white;
+  padding: 0.3em 1.5em;
+  border-radius: 0.3em;
+  cursor: pointer;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1em;
+  margin-top: 0.75em;
+}
+
+@media screen and (max-width: 725px) {
+  .projects-con {
+    margin-top: 30px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .projects-con {
+    margin-top: 60px;
+  }
+  .projects-con .project.ishare,
+  .projects-con .project.gabi-store {
+    width: 90%;
+    margin: 0.5em auto;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  .projects-con .project.gabi-store button {
+    margin-bottom: 0.75em;
+  }
+}
+@media screen and (max-width: 500px) {
+  .projects-con {
+    margin-top: 90px;
+  }
+}
+@media screen and (max-width: 462px) {
+  .projects-con {
+    margin-top: 160px;
+  }
+}
+@media screen and (max-width: 406px) {
+  .projects-con {
+    margin-top: 200px;
+  }
+}
+@media screen and (max-width: 368px) {
+  .projects-con {
+    margin-top: 230px;
+  }
+}
+@media screen and (max-width: 312px) {
+  .projects-con {
+    margin-top: 260px;
+  }
+}
+@media screen and (max-width: 302px) {
+  .projects-con {
+    margin-top: 290px;
+  }
+}
+@media screen and (max-width: 274px) {
+  .projects-con {
+    margin-top: 320px;
+  }
 }

@@ -1,0 +1,198 @@
+
+
+.projects-con {
+    width: 100%;
+
+    h3 {
+        text-align: center;
+        font-size: 1.5em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: capitalize;
+        margin: .5em;
+        color: $primary-text-color;
+
+        .project-icon {
+            font-size: 1.75em;
+            margin-right: .25em;
+        }
+    }
+
+    .project-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .project {
+            width: 85%;
+            margin: 0 auto;
+            padding: .35em;
+            border-radius: .3em;
+
+            h4 {
+                margin: .35em;
+                text-align: center;
+            }
+
+            p {
+                text-align: center;
+                padding: .3em;
+            }
+
+            .btn-container {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .project-link {
+                    margin: .35em;
+                    background: transparent;
+                    text-decoration: none;
+                    position: relative;
+                    color: white;
+                    border: 2px solid $primary-text-color;
+                    padding: .25em 1.3em;
+                    border-radius: .3em;
+                    cursor: pointer;
+                    z-index: 3;
+                    transition: 1s;
+
+                    span {
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        width: 0;
+                        height: 100%;
+                        background: $primary-text-color;
+                        border-radius: .3em;
+                        z-index: -3;
+                        transition: 1s;
+                    }
+
+                    &:hover {
+                        border: none;
+                        span {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+
+
+        .project.ishare {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.445),rgba(0, 0, 0, 0.47)),url('D:/projects/react-profile/portfolio-i/src/assets/images/share-4.jpg');
+            background-position: center;
+            background-size: cover;
+
+            .project-link {
+                border-color: rgb(255, 123, 0);
+                color: rgb(255, 123, 0);
+                font-weight: bold;
+                margin: .85em 3em;
+
+                span {
+                    background: white;
+                }
+            }
+
+            h4,p {
+                color: white;
+                font-style: italic;
+            }
+
+            p {
+                background: rgba(0, 0, 0, 0.559);
+            }
+        }
+
+        .project.gabi-store {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.06),rgba(0, 0, 0, 0.118)),url('D:/projects/react-profile/portfolio-i/src/assets/images/gabi-2.jpg');
+            background-position: center;
+            background-size: cover;
+
+            button {
+                background: $primary-text-color;
+                border: none;
+                color: white;
+                padding: .3em 1.5em;
+                border-radius: .3em;
+                cursor: pointer;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 1em;
+                margin-top: .75em;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 725px) {
+    .projects-con {
+        margin-top: 30px;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+
+    .projects-con {
+        margin-top: 60px;
+
+        .project.ishare,
+        .project.gabi-store {
+            width: 90%;
+            margin: .5em auto;
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+
+        .project.gabi-store {
+            button {
+                margin-bottom: .75em;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .projects-con {
+        margin-top: 90px;
+    }
+}
+
+@media screen and (max-width: 462px) {
+    .projects-con {
+        margin-top: 160px;
+    }
+}
+
+@media screen and (max-width: 406px) {
+    .projects-con {
+        margin-top: 200px;
+    }
+}
+
+@media screen and (max-width: 368px) {
+    .projects-con {
+        margin-top: 230px;
+    }
+}
+
+@media screen and (max-width: 312px) {
+    .projects-con {
+        margin-top: 260px;
+    }
+}
+
+@media screen and (max-width: 302px) {
+    .projects-con {
+        margin-top: 290px;
+    }
+}
+
+@media screen and (max-width: 274px) {
+    .projects-con {
+        margin-top: 320px;
+    }
+}
