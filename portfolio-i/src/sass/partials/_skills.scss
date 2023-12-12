@@ -22,6 +22,7 @@
     .skill-list {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        padding: .35em;
 
         .spinner-con {
             display: flex;
@@ -34,7 +35,7 @@
             }
 
             .spinner {
-                width: 250px;
+                width: 80%;
                 height: 250px;
                 background: rgb(0, 0, 0);
                 border-radius: .35em;
@@ -104,6 +105,93 @@
                     color: white;
                     font-size: small;
                     font-weight: bold;
+                }
+            }
+        }
+
+        // form validations
+        .form-con {
+            width: 100%;
+            h4 {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: .35em;
+            }
+
+            .form {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: rgb(227, 227, 227);
+                padding: .5em;
+                border-radius: .35em;
+
+                form {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    .input-controll {
+                        width: 50%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        margin: .25em;
+
+                        &.error {
+                            input {
+                                border-color: $primary-error-text-color;
+                            }
+                        }
+                        &.success {
+                            input {
+                                border-color: $primary-text-color;
+                            }
+                        }
+
+                        input {
+                            width: 100%;
+                            text-align: center;
+                            border: 2px solid rgba(black,.15);
+                            font-family: 'Times New Roman', Times, serif;
+                            padding: .35em .5em;
+                            outline: none;
+                            background: transparent;
+                            font-size: .95em;
+                            border-radius: .3em;
+                        }
+
+                        .error {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: small;
+                            font-weight: normal;
+                            font-style: normal;
+                            color: $primary-error-text-color;
+                        }
+                    }
+
+                    .input-controll.btn-controll {
+                        width: 40%;
+                        display: flex;
+                        align-items: center;
+
+                        button {
+                            width: 100%;
+                            border: none;
+                            font-family: 'Times New Roman', Times, serif;
+                            padding: .3em;
+                            color: white;
+                            border-radius: .13em;
+                            background: $primary-text-color;
+                            font-size: .95em;
+                            cursor: pointer;
+                        }
+                    }
                 }
             }
         }

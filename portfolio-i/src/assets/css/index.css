@@ -394,6 +394,7 @@ header .header .user-container .profile-img {
 .skills-con .skill-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  padding: 0.35em;
 }
 .skills-con .skill-list .spinner-con {
   display: flex;
@@ -405,7 +406,7 @@ header .header .user-container .profile-img {
   text-align: center;
 }
 .skills-con .skill-list .spinner-con .spinner {
-  width: 250px;
+  width: 80%;
   height: 250px;
   background: rgb(0, 0, 0);
   border-radius: 0.35em;
@@ -465,4 +466,77 @@ header .header .user-container .profile-img {
   color: white;
   font-size: small;
   font-weight: bold;
+}
+.skills-con .skill-list .form-con {
+  width: 100%;
+}
+.skills-con .skill-list .form-con h4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.35em;
+}
+.skills-con .skill-list .form-con .form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(227, 227, 227);
+  padding: 0.5em;
+  border-radius: 0.35em;
+}
+.skills-con .skill-list .form-con .form form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.skills-con .skill-list .form-con .form form .input-controll {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.25em;
+}
+.skills-con .skill-list .form-con .form form .input-controll.error input {
+  border-color: rgb(154, 0, 0);
+}
+.skills-con .skill-list .form-con .form form .input-controll.success input {
+  border-color: rgb(7, 85, 55);
+}
+.skills-con .skill-list .form-con .form form .input-controll input {
+  width: 100%;
+  text-align: center;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  font-family: "Times New Roman", Times, serif;
+  padding: 0.35em 0.5em;
+  outline: none;
+  background: transparent;
+  font-size: 0.95em;
+  border-radius: 0.3em;
+}
+.skills-con .skill-list .form-con .form form .input-controll .error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: small;
+  font-weight: normal;
+  font-style: normal;
+  color: rgb(154, 0, 0);
+}
+.skills-con .skill-list .form-con .form form .input-controll.btn-controll {
+  width: 40%;
+  display: flex;
+  align-items: center;
+}
+.skills-con .skill-list .form-con .form form .input-controll.btn-controll button {
+  width: 100%;
+  border: none;
+  font-family: "Times New Roman", Times, serif;
+  padding: 0.3em;
+  color: white;
+  border-radius: 0.13em;
+  background: rgb(7, 85, 55);
+  font-size: 0.95em;
+  cursor: pointer;
 }
