@@ -3,6 +3,7 @@ import { GoGear } from "react-icons/go"
 // skills
 import Spinner from "./sub-pages/skills/Spinner"
 import FormValidation from "./sub-pages/skills/FormValidation"
+import ThemeSwitcher from "./sub-pages/skills/ThemeSwitcher"
 
 const Skills = () => {
     return ( 
@@ -11,22 +12,7 @@ const Skills = () => {
             <div className="skill-list">
                 <Spinner />
                 <FormValidation />
-                <div className="skill">
-                    <h4>Theme Swithcer</h4>
-                    <div className="spinner">
-                        <div className="ring">
-                            ring
-                        </div>
-                    </div>
-                </div>
-                <div className="skill">
-                    <h4>Responsive Design</h4>
-                    <div className="spinner">
-                        <div className="ring">
-                            ring
-                        </div>
-                    </div>
-                </div>
+                <ThemeSwitcher />
             </div>
         </div>
      );

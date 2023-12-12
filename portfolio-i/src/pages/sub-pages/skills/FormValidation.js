@@ -1,4 +1,6 @@
 import { useState } from "react"
+import { IoIosCloseCircle } from "react-icons/io"
+import { FaThumbsUp } from "react-icons/fa"
 
 const FormValidation = () => {
     // states
@@ -13,11 +15,7 @@ const FormValidation = () => {
     // fields
     const {username,email,phone,password,password2} = formField 
 
-    // submit handler
-    const submitHandler = e => {
-        e.preventDefault()
-        console.log("Submited")
-    }
+  
 
     // username handler
     const usernameHandler = e => {
@@ -91,8 +89,8 @@ const FormValidation = () => {
         const phoneParent = element.parentElement 
         const phoneError = phoneParent.querySelector('.error.phone')
         const phonePattern1 = /^(\+2519)/
-        const phonePattern2 = /^(\+2519)([\w]{8})/
-        const phonePattern3 = /^(\+2519)([\d]+)/
+        const phonePattern2 = /^(\+2519)([\d]{8})/
+        const phonePattern3 = /^(\+2519)([\d]{8})$/
         if(!phone){
             phoneParent.classList.add('error')
             phoneParent.classList.remove('success')
@@ -105,17 +103,147 @@ const FormValidation = () => {
             phoneParent.classList.add('error')
             phoneParent.classList.remove('success')
             phoneError.textContent = 'compete phone number'
-        }else{
+        }else if(!phonePattern3.test(phone)){
+            phoneParent.classList.add('error')
+            phoneParent.classList.remove('success')
+            phoneError.textContent = 'Phone number length exedes max'
+        }
+        else{
             phoneParent.classList.remove('error')
             phoneParent.classList.add('success')
             phoneError.textContent = ''
         }
     }
 
+    // password handler
+    const passwordHandler = e => {
+        setFormField(prevState=>({
+            ...prevState,
+            password: e.target.value
+        }))
+    }
+
+    const passwordErrorSuccessHandler = element => {
+        const passwordParent = element.parentElement 
+        const passwordError = passwordParent.querySelector('.error.password')
+        
+        if(!password){
+            passwordParent.classList.add('error')
+            passwordParent.classList.remove('success')
+            passwordError.textContent = 'passsowred required'
+        }else if(password.length < 7){
+            passwordParent.classList.add('error')
+            passwordParent.classList.remove('success')
+            passwordError.textContent = 'too short password'
+        }else {
+            passwordParent.classList.remove('error')
+            passwordParent.classList.add('success')
+            passwordError.textContent = ''
+        }
+    }
+
+    // password 2 handler
+    const password2Handler = e => {
+        setFormField(prevState=>({
+            ...prevState,
+            password2: e.target.value
+        }))
+    }
+
+    const password2ErrorSuccessHandler = element => {
+        const password2Parent = element.parentElement 
+        const password2Error = password2Parent.querySelector('.error.password2')
+
+        if(!password2){
+            password2Parent.classList.add('error')
+            password2Parent.classList.remove('success')
+            password2Error.textContent = 'confirm passowrd'
+        }else if(password !== password2){
+            password2Parent.classList.add('error')
+            password2Parent.classList.remove('success')
+            password2Error.textContent = 'passowrds not match'
+        }else {
+            password2Parent.classList.remove('error')
+            password2Parent.classList.add('success')
+            password2Error.textContent = ''
+        }
+    }
+
+
+      // submit handler
+      const submitHandler = () => {
+
+        const usernameElem = document.querySelector('input[name="username"]') 
+        const emalilElem = document.querySelector('input[name="email"]')
+        const phoneElem = document.querySelector('input[name="phone"]')
+        const passwordElem = document.querySelector('input[name="password"]')
+        const password2Elem = document.querySelector('input[name="password2"]')
+        
+        if(!username){
+            usernameElem.parentElement.classList.add('error')
+            usernameElem.parentElement.classList.remove('success')
+            usernameElem.nextElementSibling.textContent = 'username required'
+        }else if(!email){
+            emalilElem.parentElement.classList.add('error')
+            emalilElem.parentElement.classList.remove('success')
+            emalilElem.nextElementSibling.textContent = 'email address required'
+        }else if(!password){
+            passwordElem.parentElement.classList.add('error')
+            passwordElem.parentElement.classList.remove('success')
+            passwordElem.nextElementSibling.textContent = 'password required'
+        }else if(!password2){
+            password2Elem.parentElement.classList.add('error')
+            password2Elem.parentElement.classList.remove('success')
+            password2Elem.nextElementSibling.textContent = 'confirm password'
+        }else if(password !== password2){
+            password2Elem.parentElement.classList.add('error')
+            password2Elem.parentElement.classList.remove('success')
+            password2Elem.nextElementSibling.textContent = 'passowrds not match'
+        }else{
+            usernameElem.parentElement.classList.remove('error')
+            usernameElem.parentElement.classList.remove('success')
+
+            emalilElem.parentElement.classList.remove('error')
+            emalilElem.parentElement.classList.remove('success')
+
+            phoneElem.parentElement.classList.remove('error')
+            phoneElem.parentElement.classList.remove('success')
+
+            passwordElem.parentElement.classList.remove('error')
+            passwordElem.parentElement.classList.remove('success')
+
+            password2Elem.parentElement.classList.remove('error')
+            password2Elem.parentElement.classList.remove('success')
+
+            setFormField({
+                username: '',
+                email: '',
+                phone: '',
+                password: '',
+                password2: ''
+            })
+
+            const popUp = document.querySelector('.pop-up')
+            popUp.style.transform = 'scale(1)'
+        }
+        
+        }
+
+    // hide pop up
+    const hidePopUp = () => {
+        const popUp = document.querySelector('.pop-up')
+        popUp.style.transform = 'scale(0)'
+    }
+
   return (
     <div className="form-con">
         <h4>Form Validation</h4>
       <div className="form">
+        <div className="pop-up">
+            <button><FaThumbsUp /></button>
+            <span>successful signup</span>
+            <button onClick={hidePopUp}><IoIosCloseCircle /></button>
+        </div>
         <form onSubmit={submitHandler}>
             <div className="input-controll">
                 <input type="text" name="username" placeholder="username" 
@@ -140,15 +268,21 @@ const FormValidation = () => {
                 <div className="error phone"></div>
             </div>
             <div className="input-controll">
-                <input type="password" name="password" placeholder="password" />
+                <input type="password" name="password" placeholder="password" 
+                    value={password}
+                    onChange={passwordHandler} 
+                    onKeyUp={e=>passwordErrorSuccessHandler(e.target)}/>
                 <div className="error password"></div>
             </div>
             <div className="input-controll">
-                <input type="password" name="password2" placeholder="confirm password" />
-                <div className="error password"></div>
+                <input type="password" name="password2" placeholder="confirm password" 
+                    value={password2} 
+                    onChange={password2Handler} 
+                    onKeyUp={e=>password2ErrorSuccessHandler(e.target)}/>
+                <div className="error password2"></div>
             </div>
             <div className="input-controll btn-controll">
-                <button>Signup</button>
+                <span className="button" onClick={submitHandler}>Signup</span>
             </div>
         </form>
       </div>
